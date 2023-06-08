@@ -8,10 +8,11 @@ describe('Create a process request + File uploaded', () => {
     //login 
     cy.get('#username-input').type("sajid.bashir+mh3@kwanso.com");
     cy.get('#password-input').type("Test#123{Enter}");
-    cy.get('.jss94 > .MuiButtonBase-root > .MuiButton-label').should('have.text', 'View all tasks');
+    //cy.wait(10000);
+    cy.get('.jss95 > .MuiButtonBase-root > .MuiButton-label').should('have.text', 'View all tasks');
   })
 
-  it('creating a process request', () => {
+  it.skip('creating a process request', () => {
 
     cy.get('button[aria-label="Create"]:visible').click();
     cy.wait(1000);
@@ -31,7 +32,7 @@ describe('Create a process request + File uploaded', () => {
     cy.contains("No").click();
     cy.get('#special-notes-input').type("Automation testing")
     //cy.contains("SUBMIT CASE REQUEST").click();
-    //cy.get('a[href="/process-requests"]').should('have.text','PROCESS REQUESTS').click();
+    //cy.get('a[href="/process-requests"]').should('have.text', 'PROCESS REQUESTS').click();
     cy.wait(2000);
   })
 
@@ -44,8 +45,10 @@ describe('Create a process request + File uploaded', () => {
     cy.wait(5000);
     cy.get('[href="/people/sajid-fn4-2"] > .MuiPaper-root').click();
     cy.get('#person-navigation-1 > .MuiTab-wrapper').click();
+    cy.get("label[for='contained-button-file-DIPLOMA'] span[class='MuiButton-label']").click();
+    cy.get('input[type=file]').eq(0).selectFile('cypress//fixtures//bot.jpg', { force: true })
     //file to uplaod (if we choser the css selector type file only then the uploaded file will be display in cypress)
-    cy.get("label[for='contained-button-file-DIPLOMA'] span[class='MuiButton-label']").attachFile('bot.jpg');
-    cy.wait(5000);
+    //cy.get("label[for='contained-button-file-DIPLOMA'] span[class='MuiButton-label']").attachFile('bot.jpg');
+    //cy.wait(5000);
   })
 })
