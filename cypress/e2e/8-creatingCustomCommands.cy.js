@@ -19,6 +19,7 @@ describe('Fixtures work in driving data', () => {
 
     //****Building customized Cypress commands for reusing the code (remaining code for the to select the product is pressent in the commands.js folder)*/
     cy.SelectProduct('Blackberry');
+
   })
 
 })
