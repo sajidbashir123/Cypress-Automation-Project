@@ -16,16 +16,14 @@
 // -- This is a child command --
 // Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
 
-
 //**********Create a custom command which is using in the file 8-creating custom commands */
-Cypress.Commands.add('SelectProduct', (productname) => {
-    cy.get('h4.card-title').each(($el, index, $list) => {
-
-        if ($el.text().includes(productname)) {
-            cy.get('button.btn').eq(index).click()
-        }
-    })
-})
+Cypress.Commands.add("SelectProduct", (productName) => {
+  cy.get("h4.card-title").each(($el, index, $list) => {
+    if ($el.text().includes(productName)) {
+      cy.get("button.btn").eq(index).click();
+    }
+  });
+});
 //
 // -- This is a dual command --
 // Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
@@ -33,5 +31,5 @@ Cypress.Commands.add('SelectProduct', (productname) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import 'cypress-file-upload';
-import 'cypress-iframe';
+import "cypress-file-upload";
+import "cypress-iframe";
