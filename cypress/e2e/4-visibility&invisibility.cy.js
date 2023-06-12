@@ -1,20 +1,17 @@
 /// <reference types="Cypress" />
 
+describe("My Automation Project", () => {
+  it("Verifying the visiblility/invisibility of the textbox", () => {
+    cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
 
-describe('My Automation Project', () => {
+    //Hide the textbox and verify
+    cy.get("#hide-textbox").click();
+    cy.get("#displayed-text").should("not.be.visible");
 
-    it('Verifying the visiblility/invisibility of the textbox', () => {
-      cy.visit('https://rahulshettyacademy.com/AutomationPractice/');
+    cy.wait(2000);
 
-      //Hide the textbox and verify
-      cy.get('#hide-textbox').click();
-      cy.get('#displayed-text').should('not.be.visible');
-      
-      cy.wait(2000);
-
-      //show the textbox and verify
-      cy.get('#show-textbox').click();
-      cy.get('#displayed-text').should('be.visible');
-
-    })
-})
+    //show the textbox and verify
+    cy.get("#show-textbox").click();
+    cy.get("#displayed-text").should("be.visible");
+  });
+});
