@@ -10,13 +10,13 @@ describe("My Automation Project", () => {
     cy.get(".search-keyword").type("ca");
     cy.wait(2000);
     //below with the three different commands we find the same products
-    //here we are geting the css selector for the parent class "products" --> see by inscpection mode
+    //here we are geting the css selector for the parent class "products" --> see by inspection mode
     cy.get(".products").should("have.length", 1);
-    //Here we are getting the css selector for the child class "product" where we 4 electments are visible
+    //Here we are getting the css selector for the child class "product" where we 4 electrets are visible
     cy.get(".product:visible").should("have.length", 4);
     //Here we are using the .find method to find the child classes "product" from the parent class "products"
     cy.get(".products").find(".product").should("have.length", 4);
-    /*Here we are using .eq("indecx") method to find the specifically product in present in the array having indecx "2"
+    /*Here we are using .eq("indecx") method to find the specifically product in present in the array having index "2"
     and then ckicking on "Add to cart" button */
     cy.get(".products")
       .find(".product")

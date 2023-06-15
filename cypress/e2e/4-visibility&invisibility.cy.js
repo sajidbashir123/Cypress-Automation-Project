@@ -10,7 +10,7 @@ describe("My Automation Project", () => {
 
     cy.wait(2000);
 
-    //show the textbox and verify
+    //show the textbox and verify 
     cy.get("#show-textbox").click();
     cy.get("#displayed-text").should("be.visible");
   });
