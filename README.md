@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 # Cypress-Automation
-Sharing my learning cypress automation base project in the repository
+Sharing my learning cypress automation project in this repository
 =======
 # Cypress-Automation-Project
 This is my demo learning automation project. I learned from different tutorial and their many basic concepts for cypress users
