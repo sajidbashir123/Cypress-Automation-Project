@@ -6,7 +6,7 @@ describe("Fixtures work in driving data", () => {
     cy.get(":nth-child(2) > .nav-link").click();
 
     /*
-    //******Slecting the item from .each methods********
+    //******Selecting the item from .each methods********
     cy.get('h4.card-title').each(($el, index, $list) => {
 
       if ($el.text().includes("Samsung Note 8")) {
@@ -15,7 +15,7 @@ describe("Fixtures work in driving data", () => {
     })
       */
 
-    //****Building customized Cypress commands for reusing the code (remaining code for the to select the product is pressent in the commands.js folder)*/
+    //****Building customized Cypress commands for reusing the code (remaining code for the to select the product is present in the (cypress/support/commands.js) file*/
     cy.SelectProduct("Blackberry");
   });
 });
