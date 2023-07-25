@@ -3,7 +3,7 @@ import "cypress-file-upload";
 
 describe("Create a process request + File uploaded", () => {
   beforeEach("This part will run before all it block", () => {
-    cy.visit("/");
+    cy.visit("/"); // The base url is set in "cypress.config.js" file and we can use it globally
     //login
     cy.get("#username-input").type("sajid.bashir+mh3@kwanso.com");
     cy.get("#password-input").type("Test#123{Enter}");
