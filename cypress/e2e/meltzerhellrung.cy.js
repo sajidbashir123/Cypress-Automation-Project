@@ -40,15 +40,18 @@ describe("Create a process request + File uploaded", () => {
     cy.wait(500);
     cy.contains("No").click();
     cy.get("#special-notes-input").type("Automation testing");
-    //cy.contains("SUBMIT CASE REQUEST").click();
-    //cy.get('a[href="/process-requests"]').should("have.text", "PROCESS REQUESTS").click();
+    cy.contains("SUBMIT CASE REQUEST").click();
+    cy.get('a[href="/process-requests"]').should(
+      "contain.text",
+      "Process Requests"
+    );
 
     cy.wait(2000);
   });
 
   //File uplaods
 
-  it.skip("File uplaod", () => {
+  it("File uplaod", () => {
     cy.get('[href="/contacts"] > .MuiButton-label').click();
     cy.get("#contact-navigation-2 > .MuiTab-wrapper").click();
     cy.get(
