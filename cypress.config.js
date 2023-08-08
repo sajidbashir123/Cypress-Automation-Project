@@ -16,4 +16,13 @@ module.exports = defineConfig({
   env: {
     url: "https://rahulshettyacademy.com/angularpractice/",
   },
+
+  retries: {
+    // Configure retry attempts for `cypress run`
+    // Default is 0
+    runMode: 1,
+    // Configure retry attempts for `cypress open`
+    // Default is 0
+    openMode: 0,
+  },
 });
