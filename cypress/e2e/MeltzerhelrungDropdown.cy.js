@@ -16,7 +16,8 @@ describe("Create a process request + File uploaded", () => {
     cy.get(".MuiLink-root > .MuiPaper-root").click();
     cy.get("#person-navigation-4 > .MuiTab-wrapper").click();
     //change the case for this specific users
-    cy.get(".MuiTableBody-root > :nth-child(1) > :nth-child(1) > a").click();
+    // cy.get(".MuiTableBody-root > :nth-child(1) > :nth-child(1) > a").click();
+    cy.get(":nth-child(2) > :nth-child(1) > a").click();
     //cy.wait(1000);
     cy.get("#case-navigation-2 > .MuiTab-wrapper").click();
     // recursive function working as loop
@@ -29,9 +30,7 @@ describe("Create a process request + File uploaded", () => {
       cy.get("#modal").then(($element) => {
         const elementText = $element.text();
         if (elementText.includes("There are no more documents left to add.")) {
-          cy.get(
-            "cy.get('.MuiBox-root > .MuiBox-root:nth-child(3) > .MuiButtonBase-root > .MuiIconButton-label > .MuiSvgIcon-root')"
-          ).click();
+          cy.get('button[data-title="close-button"]').click();
           return;
         } else {
           //open dropdown to add document types
