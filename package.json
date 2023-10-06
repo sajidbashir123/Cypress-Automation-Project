@@ -7,14 +7,14 @@
     "test": "node_modules\\.bin\\cypress run",
     "headed": "npm run test -- --headed",
     "chrome": "npm run headed -- --browser chrome",
-    "recorded": "npm run test -- --record --key 7963c00e-ac39-4282-9955-b479be131a94 --headed --browser chrome",
+    "cypress-cloud": "npm run test -- --record --key 7963c00e-ac39-4282-9955-b479be131a94 --headed --browser chrome --spec \"cypress/e2e/framwork/framwork13/login/*\"",
     "login": "npm run test -- --spec \"cypress/e2e/framwork/framwork13/login/*\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.3.0"
+    "cypress": "^13.2.0"
   },
   "devDependencies": {
     "cypress-file-upload": "^5.0.8",
